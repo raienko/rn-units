@@ -1,0 +1,31 @@
+{
+  "name": "rn-units",
+  "version": "0.0.1",
+  "description": "Collection of helpers that makes layouts design easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raienko/rn-units.git"
+  },
+  "keywords": [
+    "react-native",
+    "responsive",
+    "units",
+    "rem",
+    "vw",
+    "vh",
+    "sizes"
+  ],
+  "author": "Alex Raienko <raienko.a@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raienko/rn-units/issues"
+  },
+  "homepage": "https://github.com/raienko/rn-units#readme",
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}
