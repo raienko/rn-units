@@ -18,7 +18,9 @@ Please check following helpers:
 | screenHeight | height of the screen |
 | vw() | percent of screen width | 
 | vh() | percent of screen height | 
-| rem() | units that keep proportions despite device size | 
+| rem() | units that keep proportions despite device size |
+| isIOS | boolean |
+| isAndroid | boolean |
 
 ###### Usage
 

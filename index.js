@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 export const {
   width: screenWidth,
@@ -10,3 +10,7 @@ export const vw = size => Math.floor((screenWidth / 100) * size);
 export const vh = size => Math.floor((screenHeight / 100) * size);
 
 export const rem = size => Math.floor((screenWidth / 380) * size);
+
+export const isIOS = Platform.OS === 'ios';
+
+export const isAndroid = Platform.OS === 'android';
