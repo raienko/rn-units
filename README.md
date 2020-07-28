@@ -21,6 +21,7 @@ Please check following helpers:
 | rem() | units that keep proportions despite device size |
 | isIOS | boolean |
 | isAndroid | boolean |
+| doNothing | function placeholder |
 
 ###### Usage
 

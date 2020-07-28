@@ -14,3 +14,5 @@ export const rem = size => Math.floor((screenWidth / 380) * size);
 export const isIOS = Platform.OS === 'ios';
 
 export const isAndroid = Platform.OS === 'android';
+
+export const doNothing = () => {};
