@@ -16,3 +16,5 @@ export const isIOS = Platform.OS === 'ios';
 export const isAndroid = Platform.OS === 'android';
 
 export const doNothing = () => {};
+
+export const combineStyles = (...styles) => styles.reduce((acc, style) => acc.concat(style), []);

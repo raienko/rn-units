@@ -22,6 +22,7 @@ Please check following helpers:
 | isIOS | boolean |
 | isAndroid | boolean |
 | doNothing | function placeholder |
+| combineStyles | combines styles into a single array |
 
 ###### Usage
 
