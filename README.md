@@ -23,6 +23,7 @@ Please check following helpers:
 | isAndroid | boolean |
 | doNothing | function placeholder |
 | combineStyles | combines styles into a single array |
+| img | converts asset path into image source
 
 ###### Usage
 
