@@ -20,3 +20,5 @@ export const doNothing = () => {};
 export const combineStyles = (...styles) => styles.reduce((acc, style) => acc.concat(style), []);
 
 export const img = (source) => typeof source === 'string' ? { uri: source } : source;
+
+export const generateMatrix = (x, y, value) => Array(y).fill().map(() => Array(x).fill(value));

@@ -21,9 +21,10 @@ Please check following helpers:
 | rem() | units that keep proportions despite device size |
 | isIOS | boolean |
 | isAndroid | boolean |
-| doNothing | function placeholder |
-| combineStyles | combines styles into a single array |
-| img | converts asset path into image source
+| doNothing() | function placeholder |
+| combineStyles(style1, style2, ...) | combines styles into a single array |
+| img(path) | converts asset path into image source |
+| generateMatrix(x, y, value) | generates matrix
 
 ###### Usage
 
