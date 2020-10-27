@@ -22,3 +22,13 @@ export const combineStyles = (...styles) => styles.reduce((acc, style) => acc.co
 export const img = (source) => typeof source === 'string' ? { uri: source } : source;
 
 export const generateMatrix = (x, y, value) => Array(y).fill().map(() => Array(x).fill(value));
+
+export const wait = timeout => new Promise(resolve => setTimeout(resolve, timeout));
+
+export const seconds = amount => amount * 1000;
+
+export const minutes = amount => seconds(60) * amount;
+
+export const hours = amount => minutes(60) * amount;
+
+export const days = amount => hours(24) * amount;

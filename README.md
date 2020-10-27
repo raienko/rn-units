@@ -25,6 +25,11 @@ Please check following helpers:
 | combineStyles(style1, style2, ...) | combines styles into a single array |
 | img(path) | converts asset path into image source |
 | generateMatrix(x, y, value) | generates matrix
+| async wait(timeout) | delay |
+| seconds(amount) | returns seconds converted to milliseconds |
+| minutes(amount) | returns minutes converted to milliseconds |
+| hours(amount) | returns hours converted to milliseconds |
+| days(amount) | returns days converted to milliseconds |
 
 ###### Usage
 
@@ -46,4 +51,14 @@ const halfScreenHeight = vh(50);
 ```
 import { rem } from 'rn-units';
 const sameSizeOnAnyDevice = rem(20);
+```
+
+```
+import { wait, seconds } from 'rn-units';
+
+async doSomething() {
+  showSplashScreen();
+  await wait(seconds(10));
+  hideSplashScreen();
+}
 ```
