@@ -30,6 +30,7 @@ Please check following helpers:
 | minutes(amount) | returns minutes converted to milliseconds |
 | hours(amount) | returns hours converted to milliseconds |
 | days(amount) | returns days converted to milliseconds |
+| throwError(message, code, data) | throws JS Error with extra fields |
 
 ###### Usage
 

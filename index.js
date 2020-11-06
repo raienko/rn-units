@@ -32,3 +32,10 @@ export const minutes = amount => seconds(60) * amount;
 export const hours = amount => minutes(60) * amount;
 
 export const days = amount => hours(24) * amount;
+
+export const throwError = (message, code, data) => {
+  const error = new Error(message);
+  error.code = code;
+  error.data = data;
+  throw error;
+}
