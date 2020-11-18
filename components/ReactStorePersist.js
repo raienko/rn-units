@@ -19,7 +19,11 @@ const rehydratable = (defaultReducer, initialState) => (state, action) => {
         rehydrated: state.rehydrated,
       };
     default:
-      return defaultReducer(state, action);
+      const changes = defaultReducer(state, action);
+      return {
+        ...changes,
+        rehydrated: state.rehydrated,
+      };
   }
 };
 
