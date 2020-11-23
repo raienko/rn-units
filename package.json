@@ -1,6 +1,7 @@
 {
   "name": "rn-units",
   "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Collection of helpers that makes layouts design easier",
   "main": "index.js",
   "scripts": {
