@@ -5,11 +5,11 @@ export const {
   height: screenHeight
 } = Dimensions.get('screen');
 
-export const vw = size => Math.floor((screenWidth / 100) * size);
+export const vw = (size = 0) => Math.floor((screenWidth / 100) * size);
 
-export const vh = size => Math.floor((screenHeight / 100) * size);
+export const vh = (size = 0) => Math.floor((screenHeight / 100) * size);
 
-export const rem = size => Math.floor((screenWidth / 380) * size);
+export const rem = (size = 0) => Math.floor((screenWidth / 380) * size);
 
 export const isIOS = Platform.OS === 'ios';
 
@@ -23,9 +23,9 @@ export const img = (source) => typeof source === 'string' ? { uri: source } : so
 
 export const generateMatrix = (x, y, value) => Array(y).fill().map(() => Array(x).fill(value));
 
-export const wait = timeout => new Promise(resolve => setTimeout(resolve, timeout));
+export const wait = (timeout = 0) => new Promise(resolve => setTimeout(resolve, timeout));
 
-export const seconds = amount => amount * 1000;
+export const seconds = (amount = 0) => amount * 1000;
 
 export const minutes = amount => seconds(60) * amount;
 
