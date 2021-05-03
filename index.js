@@ -1,41 +1,69 @@
-import { Dimensions, Platform } from 'react-native';
+const {Dimensions, Platform, StyleSheet} = require('react-native');
 
-export const {
-  width: screenWidth,
-  height: screenHeight
-} = Dimensions.get('screen');
+const {width: screenWidth, height: screenHeight} = Dimensions.get('screen');
 
-export const vw = (size = 0) => Math.floor((screenWidth / 100) * size);
+const isLandscape = screenWidth > screenHeight;
 
-export const vh = (size = 0) => Math.floor((screenHeight / 100) * size);
+const isPortrait = !isLandscape;
 
-export const rem = (size = 0) => Math.floor((screenWidth / 380) * size);
+const base = isLandscape ? screenHeight : screenWidth;
 
-export const isIOS = Platform.OS === 'ios';
+const magicNumber = 380;
 
-export const isAndroid = Platform.OS === 'android';
+const vw = (size = 0) => Math.floor((screenWidth / 100) * size);
 
-export const doNothing = () => {};
+const vh = (size = 0) => Math.floor((screenHeight / 100) * size);
 
-export const combineStyles = (...styles) => styles.reduce((acc, style) => acc.concat(style), []);
+const rem = (size = 0) => Math.floor((base / magicNumber) * size);
 
-export const img = (source) => typeof source === 'string' ? { uri: source } : source;
+const font = size => {
+  let cof = 1;
 
-export const generateMatrix = (x, y, value) => Array(y).fill().map(() => Array(x).fill(value));
+  if (base < magicNumber) {
+    cof = base / magicNumber;
+  }
 
-export const wait = (timeout = 0) => new Promise(resolve => setTimeout(resolve, timeout));
+  return Math.round(size * cof);
+};
 
-export const seconds = (amount = 0) => amount * 1000;
+const isIOS = Platform.OS === 'ios';
 
-export const minutes = amount => seconds(60) * amount;
+const isAndroid = Platform.OS === 'android';
 
-export const hours = amount => minutes(60) * amount;
+const combineStyles = (styleA, ...rest) => StyleSheet.compose(styleA, rest);
 
-export const days = amount => hours(24) * amount;
+const img = source => (typeof source === 'string' ? {uri: source} : source);
 
-export const throwError = (message, code, data) => {
-  const error = new Error(message);
-  error.code = code;
-  error.data = data;
-  throw error;
-}
+const wait = (timeout = 0) =>
+  new Promise(resolve => setTimeout(resolve, timeout));
+
+const seconds = (amount = 0) => amount * 1000;
+
+const minutes = amount => seconds(60) * amount;
+
+const hours = amount => minutes(60) * amount;
+
+const days = amount => hours(24) * amount;
+
+const weeks = amount => days(7) * amount;
+
+module.exports = {
+  screenWidth,
+  screenHeight,
+  isLandscape,
+  isPortrait,
+  vw,
+  vh,
+  rem,
+  font,
+  isIOS,
+  isAndroid,
+  combineStyles,
+  img,
+  wait,
+  seconds,
+  minutes,
+  hours,
+  days,
+  weeks,
+};
